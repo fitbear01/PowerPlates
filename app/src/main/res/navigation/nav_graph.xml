@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cs407.powerplates.LoginFragment"
+        android:label="@string/login_screen"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_choiceLevelFragment"
+
+            app:destination="@id/choiceLevelFragment"
+
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_loginFragment_to_chooseWorkout"
+
+            app:destination="@+id/chooseWorkout"
+
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_loginFragment_to_homePage"
+
+            app:destination="@+id/homePage"
+
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+        <!--TODO: action for login to workout screen when user is logged in and has chosen exercises-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/choiceLevelFragment"
+        android:name="com.cs407.powerplates.ChoiceLevel"
+        android:label="@string/choice_level_screen"
+        tools:layout="@layout/fragment_choice_level">
+
+        <action
+            android:id="@+id/action_choiceLevelFragment_to_rankPrefFragment"
+
+            app:destination="@id/rankPrefsFragment"
+
+            app:popUpTo="@id/choiceLevelFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_choiceLevelFragment_to_homePage"
+
+            app:destination="@id/homePage"
+
+            app:popUpTo="@id/choiceLevelFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_choiceLevelFragment_to_chooseWorkout"
+
+            app:destination="@id/chooseWorkout"
+
+            app:popUpTo="@id/choiceLevelFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rankPrefsFragment"
+        android:name="com.cs407.powerplates.RankPrefs"
+        android:label="@string/rank_prefs"
+        tools:layout="@layout/fragment_rank_prefs">
+        <argument
+            android:name="level"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_rankPrefsFragment_to_chooseWorkout"
+
+            app:destination="@+id/chooseWorkout"
+
+            app:popUpTo="@id/rankPrefsFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_rankPrefsFragment_to_homePage"
+
+            app:destination="@+id/homePage"
+
+            app:popUpTo="@id/rankPrefsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!--TODO: fragment action for push -> pull -> legs -> cardio -> abs-->
+    <fragment
+        android:id="@+id/chooseWorkout"
+        android:name="com.cs407.powerplates.ChooseWorkout"
+        android:label="@string/choose_workout"
+        tools:layout="@layout/fragment_choose_workout">
+
+    <!--TODO: ADD ARG FOR CHOOSE WORKOUT-->
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="Push"
+            />
+        <argument
+            android:name="droppedIn"
+            app:argType="boolean"
+            android:defaultValue="false"
+            />
+
+        <action
+            android:id="@+id/action_chooseWorkout_to_WorkoutContentFragment"
+
+            app:destination="@+id/WorkoutContentFragment"
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_chooseWorkout_to_homePage"
+
+            app:destination="@+id/homePage"
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_chooseWorkout_to_loginFragment"
+
+            app:destination="@+id/loginFragment"
+
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_chooseWorkout_to_choiceLevelFragment"
+
+            app:destination="@+id/choiceLevelFragment"
+
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_chooseWorkout_to_rankPrefsFragment"
+
+            app:destination="@+id/rankPrefsFragment"
+
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_chooseWorkout_to_StopwatchFragment"
+
+            app:destination="@+id/StopwatchFragment"
+
+           />
+        <action
+            android:id="@+id/action_chooseWorkout_to_historyFragment"
+
+            app:destination="@+id/HistoryFragment"
+           />
+        <action
+            android:id="@+id/action_chooseWorkout_to_abWorkout"
+
+            app:destination="@+id/AbWorkout"
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+            />
+        <action
+            android:id="@+id/action_chooseWorkout_to_cardioWorkout"
+
+            app:destination="@+id/CardioWorkout"
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+        />
+        <action
+            android:id="@+id/action_chooseWorkout_to_legWorkout"
+
+            app:destination="@+id/LegWorkout"
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+        />
+        <action
+            android:id="@+id/action_chooseWorkout_to_pullWorkout"
+
+            app:destination="@+id/PullWorkout"
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+        />
+        <action
+            android:id="@+id/action_chooseWorkout_to_pushWorkout"
+
+            app:destination="@+id/PushWorkout"
+            app:popUpTo="@id/chooseWorkout"
+            app:popUpToInclusive="true"/>
+        />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.cs407.powerplates.HomePage"
+        android:label="Home Page"
+        tools:layout="@layout/fragment_home_page">
+        <action
+            android:id="@+id/action_homePage_to_chooseSession"
+
+            app:destination="@+id/ChooseSession"
+            />
+        <action
+        android:id="@+id/action_homePage_to_historyFragment"
+
+        app:destination="@+id/HistoryFragment"
+
+        app:popUpTo="@id/homePage" />
+        <action
+            android:id="@+id/action_homePage_to_loginFragment"
+
+            app:destination="@+id/loginFragment"
+
+            app:popUpTo="@id/homePage"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_homePage_to_choiceLevelFragment"
+
+            app:destination="@+id/choiceLevelFragment"
+
+            app:popUpTo="@id/homePage"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_homePage_to_rankPrefsFragment"
+
+            app:destination="@+id/rankPrefsFragment"
+
+            app:popUpTo="@id/homePage"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_homePage_to_StopwatchFragment"
+
+            app:destination="@+id/StopwatchFragment"
+
+           />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChooseSession"
+        android:name="com.cs407.powerplates.ChooseSession"
+        android:label="Choose Session"
+        tools:layout="@layout/fragment_choose_session">
+
+        <action
+            android:id="@+id/action_chooseSession_to_historyFragment"
+
+            app:destination="@+id/HistoryFragment"
+
+           />
+        <action
+            android:id="@+id/action_chooseSession_to_pushWorkout"
+
+            app:destination="@+id/PushWorkout"
+            />
+        <action
+            android:id="@+id/action_chooseSession_to_pullWorkout"
+
+            app:destination="@+id/PullWorkout"
+            />
+        <action
+            android:id="@+id/action_chooseSession_to_legWorkout"
+
+            app:destination="@+id/LegWorkout"
+            />
+        <action
+            android:id="@+id/action_chooseSession_to_cardioWorkout"
+
+            app:destination="@+id/CardioWorkout"
+            />
+        <action
+            android:id="@+id/action_chooseSession_to_abWorkout"
+
+            app:destination="@+id/AbWorkout"
+            />
+        <action
+            android:id="@+id/action_chooseSession_to_loginFragment"
+
+            app:destination="@+id/loginFragment"
+
+            app:popUpTo="@id/ChooseSession"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_chooseSession_to_choiceLevelFragment"
+
+            app:destination="@+id/choiceLevelFragment"
+
+            app:popUpTo="@id/ChooseSession"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_chooseSession_to_rankPrefsFragment"
+
+            app:destination="@+id/rankPrefsFragment"
+
+            app:popUpTo="@id/ChooseSession"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_chooseSession_to_StopwatchFragment"
+
+            app:destination="@+id/StopwatchFragment"
+
+           />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PushWorkout"
+        android:name="com.cs407.powerplates.PushWorkout"
+        android:label="Push Workout"
+        tools:layout="@layout/checkbox_card">
+
+        <action
+            android:id="@+id/action_pushWorkout_to_homePage"
+
+            app:destination="@+id/homePage"
+            app:popUpTo="@id/PushWorkout"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/actions_pushWorkout_to_chooseExercise"
+
+            app:destination="@+id/chooseWorkout"
+            app:popUpTo="@id/PushWorkout"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PullWorkout"
+        android:name="com.cs407.powerplates.PullWorkout"
+        android:label="Pull Workout"
+        tools:layout="@layout/checkbox_card">
+        <action
+            android:id="@+id/action_pullWorkout_to_homePage"
+
+            app:destination="@+id/homePage"
+            app:popUpTo="@id/PullWorkout"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/actions_pullWorkout_to_chooseExercise"
+
+            app:destination="@+id/chooseWorkout"
+            app:popUpTo="@id/PullWorkout"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/LegWorkout"
+        android:name="com.cs407.powerplates.LegWorkout"
+        android:label="Leg Workout"
+        tools:layout="@layout/checkbox_card">
+        <action
+            android:id="@+id/action_legWorkout_to_homePage"
+
+            app:destination="@+id/homePage"
+            app:popUpTo="@id/LegWorkout"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/actions_legWorkout_to_chooseExercise"
+
+            app:destination="@+id/chooseWorkout"
+            app:popUpTo="@id/LegWorkout"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CardioWorkout"
+        android:name="com.cs407.powerplates.CardioWorkout"
+        android:label="Cardio Workout"
+        tools:layout="@layout/checkbox_card">
+        <action
+            android:id="@+id/action_cardioWorkout_to_homePage"
+
+            app:destination="@+id/homePage"
+            app:popUpTo="@id/CardioWorkout"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/actions_cardioWorkout_to_chooseExercise"
+
+            app:destination="@+id/chooseWorkout"
+            app:popUpTo="@id/CardioWorkout"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AbWorkout"
+        android:name="com.cs407.powerplates.AbWorkout"
+        android:label="Ab Workout"
+        tools:layout="@layout/checkbox_card">
+        <action
+            android:id="@+id/action_abWorkout_to_homePage"
+
+            app:destination="@+id/homePage"
+            app:popUpTo="@id/AbWorkout"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/actions_abWorkout_to_chooseExercise"
+
+            app:destination="@+id/chooseWorkout"
+            app:popUpTo="@id/AbWorkout"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/StopwatchFragment"
+        android:name="com.cs407.powerplates.StopwatchFragment"
+        android:label="Stopwatch"
+        tools:layout="@layout/fragment_stopwatch">
+        <action
+            android:id="@+id/actions_stopwatch_to_Logout"
+
+            app:destination="@+id/loginFragment"
+            app:popUpTo="@id/StopwatchFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/actions_stopwatch_to_history"
+
+            app:destination="@+id/HistoryFragment"
+
+            />
+        <action
+            android:id="@+id/actions_stopwatch_to_rankPrefs"
+
+            app:destination="@+id/rankPrefsFragment"
+            />
+        <action
+            android:id="@+id/actions_stopwatch_to_chooseLevel"
+
+            app:destination="@+id/choiceLevelFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/HistoryFragment"
+        android:name="com.cs407.powerplates.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/actions_history_to_Logout"
+
+            app:destination="@+id/loginFragment"
+            app:popUpTo="@id/HistoryFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/actions_history_to_stopwatch"
+
+            app:destination="@+id/StopwatchFragment"
+            />
+        <action
+            android:id="@+id/actions_history_to_rankPrefs"
+
+            app:destination="@+id/rankPrefsFragment"
+            />
+        <action
+            android:id="@+id/actions_history_to_chooseLevel"
+
+            app:destination="@+id/choiceLevelFragment"
+            />
+
+    </fragment>
+
+
+</navigation>

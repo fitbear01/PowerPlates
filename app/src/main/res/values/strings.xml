@@ -1,0 +1,60 @@
+<resources>
+    <!--multi-use / sharedPreferences-->
+    <string name="greeting_text">Welcome %1$s!</string>
+    <string name="userPasswdKV">com.cs407.powerplates.userPasswdKV</string>
+    <string name="userLevelKV">com.cs407.powerplates.userLevelKV</string>
+
+    <!--fragment_login.xml: login screen-->
+    <string name="app_name">Power Plates</string>
+    <string name="app_logo">Power Plates logo</string>
+    <string name="login_screen">LoginScreen</string>
+    <string name="username_hint">Enter Username</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="login_button">Log In or Sign Up</string>
+    <string name="fail_login">Wrong Username or Password</string>
+
+    <!--RankPrefs.kt: greeting text-->
+    <string name="rank_prefs_greeting">Rank Your Preferences:</string>
+
+    <!--workout_layout.xml: placeholders-->
+    <string name="card_exercise_name">exercise name</string>
+    <string name="card_musclegrp">muscleGrp</string>
+    <string name="card_level">level</string>
+
+    <!--nav_graph.xml: labels-->
+    <string name="choose_workout">Choose your workouts</string>
+    <string name="choice_level_screen">Choice Level</string>
+    <string name="rank_prefs">Rank Prefs</string>
+
+    <!--ExerciseDatabase.kt: getDatabase function-->
+    <string name="exercise_database">exerciseDatabase</string>
+
+    <!--nav_bar_menu.xml: titles-->
+    <string name="stopwatch">Stopwatch</string>
+    <string name="history">History</string>
+    <string name="logout">Logout</string>
+
+    <!--{category}Workout.kt: placeholders-->
+    <string name="workout_details">%1$s\n• Level: %2$s\n• %3$s reps each set</string>
+    <string name="workout_details_no_reps">%1$s\n• Level: %2$s\n• %3$s</string>
+    <string name="workout_details_push_to_fail">%1$s\n• Level: %2$s\n• Push until Fatigue</string>
+
+    <!--fragment_history.xml: title & placeholders-->
+    <string name="workout_history">Workout History</string>
+    <string name="exercise_name_1">exercise_name_1</string>
+    <string name="exercise_name_2">exercise_name_2</string>
+    <string name="exercise_name_3">exercise_name_3</string>
+    <string name="category_workout_on_date">Category Workout on Date</string>
+
+    <!--fragment_home_page.xml: statistics title & placeholders-->
+    <string name="your_workout_statistics">Your Workout Statistics</string>
+    <string name="category">Category</string>
+    <string name="workouts_done"># Workouts Done</string>
+    <string name="top_exercise">Top Exercise</string>
+    <string name="card_category">Category</string>
+    <string name="card_workouts_done"># Workouts Done</string>
+    <string name="card_top_exercise">Top Exercise</string>
+
+    <!--currently unused-->
+    <string name="about_workout">Workout information</string>
+</resources>
